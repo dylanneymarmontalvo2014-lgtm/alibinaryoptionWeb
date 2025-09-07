@@ -6,27 +6,27 @@
   <title>Redirección por Sistema Operativo</title>
   <script>
     function redirigirPorSO() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Detectar iOS
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // iOS
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         window.location.href = "https://tusitio.com/ios";
       }
-      // Detectar Android
-      else if (/android/i.test(userAgent)) {
-        window.location.href = "hhttps://www.youtube.com/?app=desktop&hl=es";
+      // Android
+      else if (/android/i.test(ua) || /Mobile/.test(ua)) {
+        window.location.href = "https://www.youtube.com/?app=desktop&hl=es";
       }
-      // Detectar Windows
-      else if (/Win/i.test(userAgent)) {
+      // Windows PC
+      else if (/Win/i.test(ua)) {
         console.log("Estás en Windows (PC), no redirigido.");
       }
-      // Detectar Mac
-      else if (/Mac/i.test(userAgent)) {
+      // Mac
+      else if (/Mac/i.test(ua)) {
         console.log("Estás en Mac (PC), no redirigido.");
       }
-      // Otros casos
+      // Otros
       else {
-        console.log("No se detecta SO conocido, no redirigido.");
+        console.log("Sistema operativo no detectado, no redirigido.");
       }
     }
 
