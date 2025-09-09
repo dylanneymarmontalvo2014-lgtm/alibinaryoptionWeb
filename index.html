@@ -7,19 +7,21 @@
   <style>
     body {
       margin: 0;
-      overflow-x: hidden; /* Quita solo la barra horizontal */
-      overflow-y: auto;   /* Mantiene la barra vertical para desplazamiento */
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    img[usemap] {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Imagen principal con usemap -->
+  <!-- Imagen principal con mapa -->
   <img src="Entrada de la pagina.png" 
        alt="AliBinaryOption" 
-       style="width:100%; display:block;" 
        usemap="#zonas">
-  <img src="entrada.png" alt="Entrada" usemap="#zonas" loading="lazy">
-
 
   <!-- Mapa de imagen -->
   <map name="zonas">
@@ -27,15 +29,8 @@
     <area shape="rect" coords="352,50,791,104" href="operativas.html" alt="operativas">
     <area shape="rect" coords="826,45,1301,102" href="estrategias.html" alt="estrategias">
   </map>
+
   <meta name="robots" content="noindex, nofollow">
   <script src="map-responsive.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
