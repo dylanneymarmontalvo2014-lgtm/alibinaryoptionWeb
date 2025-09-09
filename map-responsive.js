@@ -1,4 +1,3 @@
-<script>
 function resizeMap() {
   const img = document.querySelector('img[usemap]');
   if (!img) return;
@@ -22,14 +21,7 @@ function resizeMap() {
   });
 }
 
-// Guardar coords originales al cargar
-window.addEventListener('DOMContentLoaded', () => {
+// Guardar coords originales cuando la página y las imágenes estén cargadas
+window.addEventListener('load', () => {
   document.querySelectorAll('area').forEach(area => {
-    area.dataset.coords = area.coords;
-  });
-  resizeMap();
-});
-
-// Ajustar al redimensionar
-window.addEventListener('resize', resizeMap);
-</script>
+    area.dataset.coords =
