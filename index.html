@@ -38,12 +38,13 @@
     const esMovil = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
     if (esMovil) {
-      document.getElementById("principal").src = "DiseñoMovil/Entrada de la pagina.png";
-    } else {
       document.getElementById("principal").src = "Entrada de la pagina.png";
+    } else {
+      document.getElementById("principal").src = "DiseñoMovil/Entrada de la pagina.png";
     }
   </script>
 
   <script src="map-responsive.js?v=2"></script>
 </body>
 </html>
+
