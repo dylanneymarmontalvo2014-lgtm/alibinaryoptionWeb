@@ -15,23 +15,11 @@
       height: auto;
       display: block;
     }
-
-    /* 🔹 Imagen por defecto (PC) */
-    #principal {
-      content: url("Entrada de la pagina.png"); /* cambia la ruta si es otra */
-    }
-
-    /* 🔹 Imagen para móvil */
-    @media (max-width: 768px) {
-      #principal {
-        content: url("DiseñoMovil/Entrada de la pagina.png"); /* pon tu versión móvil */
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Imagen principal con mapa -->
-  <img id="principal"
+  <img id="principal" 
        src="Entrada de la pagina.png" 
        alt="AliBinaryOption" 
        usemap="#zonas">
@@ -44,6 +32,18 @@
   </map>
 
   <meta name="robots" content="noindex, nofollow">
+
+  <!-- Script para detectar dispositivo -->
+  <script>
+    const esMovil = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (esMovil) {
+      document.getElementById("principal").src = "DiseñoMovil/Entrada de la pagina.png";
+    } else {
+      document.getElementById("principal").src = "Entrada de la pagina.png";
+    }
+  </script>
+
   <script src="map-responsive.js?v=2"></script>
 </body>
 </html>
